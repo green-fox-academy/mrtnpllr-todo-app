@@ -16,5 +16,7 @@ bool writeTxtFile(const std::string &filename, std::string &input);
 
 int print(const std::string &filename, printTypes type);
 
+bool isEmpty(const std::string &filename);
+
 
 #endif

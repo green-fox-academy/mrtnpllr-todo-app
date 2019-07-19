@@ -12,6 +12,9 @@ int main(int argc, char *argv[])
     if (argc == 2) {
         std::string argument(argv[1]);
         if (argument == "-l") {
+            if (isEmpty("tasks.txt")) {
+                std::cout << "No todos for today! :)" << std::endl;
+            }
             return print("tasks.txt", printTypes::NUMBERED);
 
         } else {

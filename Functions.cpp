@@ -34,10 +34,10 @@ int print(const std::string &filename, printTypes type)
     std::vector<std::string> text;
     if (openTxtFile(filename, text)) {
         for (int i = 0; i < text.size(); ++i) {
-            if (type == printTypes::BASE){
+            if (type == printTypes::BASE) {
                 std::cout << text[i] << std::endl;
             } else if (type == printTypes::NUMBERED) {
-                std::cout << i + 1 << " - " <<text[i] << std::endl;
+                std::cout << i + 1 << " - " << text[i] << std::endl;
             }
         }
 
@@ -45,4 +45,12 @@ int print(const std::string &filename, printTypes type)
     } else
         return 2;
 
+}
+
+bool isEmpty(const std::string &filename)
+{
+    std::vector<std::string> text;
+    openTxtFile(filename, text);
+
+    return text.empty();
 }
