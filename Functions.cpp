@@ -2,14 +2,14 @@
 #include <fstream>
 #include <iostream>
 
-bool openTxtFile(const std::string &filename, std::string &text)
+bool openTxtFile(const std::string &filename, std::vector<std::string> &text)
 {
     std::fstream openFile("../" + filename, std::ios::in);
 
     std::string getLines;
     if (openFile.is_open()) {
         while (std::getline(openFile, getLines)) {
-            text.append(getLines + "\n");
+            text.push_back(getLines);
         }
         openFile.close();
         return true;
@@ -29,11 +29,17 @@ bool writeTxtFile(const std::string &filename, std::string &input)
         return false;
 }
 
-int printUsage(const std::string &filename)
+int print(const std::string &filename, printTypes type)
 {
-    std::string text;
+    std::vector<std::string> text;
     if (openTxtFile(filename, text)) {
-        std::cout << text << std::endl;
+        for (int i = 0; i < text.size(); ++i) {
+            if (type == printTypes::BASE){
+                std::cout << text[i] << std::endl;
+            } else if (type == printTypes::NUMBERED) {
+                std::cout << i + 1 << " - " <<text[i] << std::endl;
+            }
+        }
 
         return 0;
     } else

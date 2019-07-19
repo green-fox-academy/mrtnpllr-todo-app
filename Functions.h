@@ -3,12 +3,18 @@
 
 
 #include <string>
+#include <vector>
 
-bool openTxtFile(const std::string& filename, std::string &text);
+enum class printTypes{
+    BASE,
+    NUMBERED
+};
 
-bool writeTxtFile(const std::string& filename, std::string &input);
+bool openTxtFile(const std::string &filename, std::vector<std::string> &text);
 
-int printUsage (const std::string& filename);
+bool writeTxtFile(const std::string &filename, std::string &input);
+
+int print(const std::string &filename, printTypes type);
 
 
 #endif
