@@ -17,6 +17,8 @@ int main(int argc, char *argv[])
             }
             return print("tasks.txt", printTypes::NUMBERED);
 
+        } else if (argument == "-a") {
+          return appendTxtFile("tasks.txt", std::string (argv[3]));
         } else {
             std::cout << "not supported argument" << std::endl;
             return 2;
