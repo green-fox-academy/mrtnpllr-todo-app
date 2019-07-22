@@ -16,6 +16,8 @@ bool writeTxtFile(const std::string &filename, std::string &input);
 
 bool appendTxtFile(const std::string &filename, std::string input);
 
+bool removeTask(const std::string &filename, int input);
+
 int print(const std::string &filename, printTypes type);
 
 bool isEmpty(const std::string &filename);

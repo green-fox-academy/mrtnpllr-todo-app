@@ -17,12 +17,14 @@ bool openTxtFile(const std::string &filename, std::vector<std::string> &text)
         return false;
 }
 
-bool writeTxtFile(const std::string &filename, std::string &input)
+bool writeTxtFile(const std::string &filename, std::vector<std::string> &input)
 {
     std::fstream createFile("../" + filename, std::ios::out);
 
     if (createFile.is_open()) {
-        createFile << input;
+        for (const auto & i : input) {
+            createFile << i + "\n";
+        }
         createFile.close();
         return true;
     } else
@@ -39,6 +41,27 @@ bool appendTxtFile(const std::string &filename, std::string input)
         return true;
     } else
         return false;
+}
+
+bool removeTask(const std::string &filename, int input)
+{
+    bool isRemoveSuccessful = false;
+    std::vector<std::string> text;
+    openTxtFile(filename, text);
+
+    for (int i = 0; i < text.size(); ++i) {
+        if (i == input - 1) {
+            text.erase(text.begin() + i);
+            isRemoveSuccessful = true;
+            writeTxtFile(filename, text);
+            break;
+        } else {
+            isRemoveSuccessful = false;
+        }
+    }
+
+
+    return isRemoveSuccessful;
 }
 
 int print(const std::string &filename, printTypes type)
