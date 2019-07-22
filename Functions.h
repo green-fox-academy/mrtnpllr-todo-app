@@ -22,5 +22,7 @@ int print(const std::string &filename, printTypes type);
 
 bool isEmpty(const std::string &filename);
 
+int countLines(const std::string &filename);
+
 
 #endif

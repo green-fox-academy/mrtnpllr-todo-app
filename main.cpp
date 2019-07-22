@@ -32,13 +32,18 @@ int main(int argc, char *argv[])
 
     if (argc == 3) {
         std::string argument(argv[1]);
+        int numberOfTasks = countLines("tasks.txt");
         if (argument == "-a")
             return appendTxtFile("tasks.txt", std::string (argv[2]));
         else if (argument == "-r") {
             //int index = (*argv[2]) - 48;
             int index = atoi(argv[2]);
-            std::cout << index << std::endl;
-            return removeTask("tasks.txt", index);
+            if (numberOfTasks >= index) {
+                return removeTask("tasks.txt", index);
+            } else {
+                std::cout << "Unable to remove: index is out of bound" << std::endl;
+                return 7;
+            }
         }
     }
 

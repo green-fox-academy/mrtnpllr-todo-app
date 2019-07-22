@@ -22,7 +22,7 @@ bool writeTxtFile(const std::string &filename, std::vector<std::string> &input)
     std::fstream createFile("../" + filename, std::ios::out);
 
     if (createFile.is_open()) {
-        for (const auto & i : input) {
+        for (const auto &i : input) {
             createFile << i + "\n";
         }
         createFile.close();
@@ -88,4 +88,17 @@ bool isEmpty(const std::string &filename)
     openTxtFile(filename, text);
 
     return text.empty();
+}
+
+int countLines(const std::string &filename)
+{
+    std::vector<std::string> text;
+    openTxtFile(filename, text);
+    int lineCounter = 0;
+
+    for (int i = 0; i < text.size(); ++i) {
+        lineCounter++;
+    }
+
+    return lineCounter;
 }
