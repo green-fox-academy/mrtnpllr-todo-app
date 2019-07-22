@@ -21,6 +21,9 @@ int main(int argc, char *argv[])
         } else if (argument == "-a") {
             std::cout << "Unable to add: no task provided" << std::endl;
             return 3;
+        } else if (argument == "-r") {
+            std::cout << "Unable to remove: no index provided" << std::endl;
+            return 3;
         } else {
             std::cout << "not supported argument\n" << std::endl;
             return print("print_usage.txt", printTypes::BASE), 2;
@@ -32,7 +35,8 @@ int main(int argc, char *argv[])
         if (argument == "-a")
             return appendTxtFile("tasks.txt", std::string (argv[2]));
         else if (argument == "-r") {
-            int index = int (*argv[2]) - 48;
+            //int index = (*argv[2]) - 48;
+            int index = atoi(argv[2]);
             std::cout << index << std::endl;
             return removeTask("tasks.txt", index);
         }
@@ -41,7 +45,7 @@ int main(int argc, char *argv[])
     if (argc > 3) {
         std::string argument(argv[1]);
         if (argument == "-a"){
-            std::cout << "No parenthesis" << std::endl;
+            std::cout << "Error" << std::endl;
             return 4;
         }
     }
