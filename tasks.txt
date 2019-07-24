@@ -5,7 +5,7 @@
 [ ] SEVENTH
 [ ] EIGTH
 [X] NINE
-[ ] ELEVEN
+[X] ELEVEN
 [X] Last task
-[ ] alma
-[ ] korte
+[X] alma
+[ ] valami
