@@ -9,8 +9,6 @@ enum class printTypes
 {
     BASE,
     NUMBERED,
-    CHECKED,
-    UNCHECKED
 };
 
 bool openTxtFile(const std::string &filename, std::vector<std::string> &text);

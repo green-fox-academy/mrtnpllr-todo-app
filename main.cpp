@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     if (argc > 3) {
         std::string argument(argv[1]);
         if (argument == "-a"){
-            std::cout << "Error" << std::endl;
+            std::cout << "Error, no parenthesis for task." << std::endl;
             return 4;
         }
     }

@@ -4,6 +4,8 @@
 [X] SIXTH
 [ ] SEVENTH
 [ ] EIGTH
-[ ] NINE
+[X] NINE
 [ ] ELEVEN
 [X] Last task
+[ ] alma
+[ ] korte

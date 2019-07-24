@@ -45,22 +45,19 @@ bool appendTxtFile(const std::string &filename, std::string input)
 
 bool removeTask(const std::string &filename, int input)
 {
-    bool isRemoveSuccessful = false;
     std::vector<std::string> text;
     openTxtFile(filename, text);
 
     for (int i = 0; i < text.size(); ++i) {
         if (i == input - 1) {
             text.erase(text.begin() + i);
-            isRemoveSuccessful = true;
             writeTxtFile(filename, text);
-            break;
-        } else {
-            isRemoveSuccessful = false;
+            return true;
+
         }
     }
 
-    return isRemoveSuccessful;
+    return false;
 }
 
 bool checkTask(const std::string &filename, int input)
