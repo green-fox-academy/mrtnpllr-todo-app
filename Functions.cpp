@@ -36,7 +36,7 @@ bool appendTxtFile(const std::string &filename, std::string input)
     std::ofstream appendFile("../" + filename, std::ofstream::app);
 
     if (appendFile.is_open()) {
-        appendFile << "[ ] " + input + "\n";
+        appendFile << input + "\n";
         appendFile.close();
         return true;
     } else

@@ -1,11 +1,6 @@
-[X] THIRD
-[ ] FOURTH
-[ ] FIFTH
-[X] SIXTH
-[ ] SEVENTH
-[X] NINE
-[X] ELEVEN
-[X] Last task
-[X] alma
-[X] alma alma
-[ ] last
+ONE
+TWO
+THREE
+FOUR
+FIVE
+SIX
