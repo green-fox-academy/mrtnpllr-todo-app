@@ -5,9 +5,12 @@
 #include <string>
 #include <vector>
 
-enum class printTypes{
+enum class printTypes
+{
     BASE,
-    NUMBERED
+    NUMBERED,
+    CHECKED,
+    UNCHECKED
 };
 
 bool openTxtFile(const std::string &filename, std::vector<std::string> &text);
@@ -17,6 +20,8 @@ bool writeTxtFile(const std::string &filename, std::string &input);
 bool appendTxtFile(const std::string &filename, std::string input);
 
 bool removeTask(const std::string &filename, int input);
+
+bool checkTask(const std::string &filename, int input);
 
 int print(const std::string &filename, printTypes type);
 

@@ -1,8 +1,9 @@
-TWO
-SIX
-TEN
-Next number
-bela
-jozsi
-mari
-dezso
+[X] THIRD
+[ ] FOURTH
+[ ] FIFTH
+[X] SIXTH
+[ ] SEVENTH
+[ ] EIGTH
+[ ] NINE
+[ ] ELEVEN
+[X] Last task

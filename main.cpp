@@ -44,6 +44,9 @@ int main(int argc, char *argv[])
                 std::cout << "Unable to remove: index is out of bound" << std::endl;
                 return 7;
             }
+        } else if (argument == "-c") {
+            int index = atoi(argv[2]);
+            return checkTask("tasks.txt", index);
         }
     }
 

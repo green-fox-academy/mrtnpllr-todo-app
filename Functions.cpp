@@ -36,7 +36,7 @@ bool appendTxtFile(const std::string &filename, std::string input)
     std::ofstream appendFile("../" + filename, std::ofstream::app);
 
     if (appendFile.is_open()) {
-        appendFile << input + "\n";
+        appendFile << "[ ] " + input + "\n";
         appendFile.close();
         return true;
     } else
@@ -60,8 +60,30 @@ bool removeTask(const std::string &filename, int input)
         }
     }
 
-
     return isRemoveSuccessful;
+}
+
+bool checkTask(const std::string &filename, int input)
+{
+    bool isChecked = false;
+    std::vector<std::string> text;
+    std::string checkedIndex;
+
+    openTxtFile(filename, text);
+
+    for (int i = 0; i < text.size(); ++i) {
+        if (i == input - 1) {
+            text[i].erase(0, 3);
+            text[i] = "[X]" + text[i];
+            isChecked = true;
+            writeTxtFile(filename, text);
+            break;
+        } else {
+            isChecked = false;
+        }
+    }
+
+    return isChecked;
 }
 
 int print(const std::string &filename, printTypes type)
