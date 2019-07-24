@@ -3,9 +3,9 @@
 [ ] FIFTH
 [X] SIXTH
 [ ] SEVENTH
-[ ] EIGTH
 [X] NINE
 [X] ELEVEN
 [X] Last task
 [X] alma
-[ ] valami
+[X] alma alma
+[ ] last

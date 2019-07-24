@@ -4,5 +4,7 @@
 
 int useTwoArguments (char *argv[]);
 
+int useThreeArguments (char *argv[]);
+
 
 #endif
