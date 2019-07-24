@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include "Functions.h"
+#include "Cases.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +12,8 @@ int main(int argc, char *argv[])
     }
 
     if (argc == 2) {
+        //useTwoArguments(&argv[1]);
+
         std::string argument(argv[1]);
         if (argument == "-l") {
             if (isEmpty("tasks.txt")) {
@@ -24,6 +27,8 @@ int main(int argc, char *argv[])
         } else if (argument == "-r") {
             std::cout << "Unable to remove: no index provided" << std::endl;
             return 3;
+        } else if (argument == "-c") {
+            std::cout << "Unable to check: no index provided" << std::endl;
         } else {
             std::cout << "not supported argument\n" << std::endl;
             return print("print_usage.txt", printTypes::BASE), 2;
@@ -40,13 +45,20 @@ int main(int argc, char *argv[])
             int index = atoi(argv[2]);
             if (numberOfTasks >= index) {
                 return removeTask("tasks.txt", index);
-            } else {
+            } else if(index == 0){
+                std::cout << "Invalid argument type, index is not a number!" << std::endl;
+            }else {
                 std::cout << "Unable to remove: index is out of bound" << std::endl;
                 return 7;
             }
         } else if (argument == "-c") {
             int index = atoi(argv[2]);
-            return checkTask("tasks.txt", index);
+            if (numberOfTasks >= index) {
+                return checkTask("tasks.txt", index);
+            } else {
+                std::cout << "Unable to check: index is out of bound" << std::endl;
+                return 7;
+            }
         }
     }
 
